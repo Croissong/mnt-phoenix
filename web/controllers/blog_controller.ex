@@ -1,4 +1,4 @@
-defmodule Blog.PageController do
+defmodule Blog.BlogController do
   use Blog.Web, :controller
 
   def index(conn, _params) do

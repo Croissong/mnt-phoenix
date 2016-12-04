@@ -1,4 +1,4 @@
-defmodule Blog.PageView do
+defmodule Blog.BlogView do
   use Blog.Web, :view
 
   def initial_state do
