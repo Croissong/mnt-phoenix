@@ -1,4 +1,4 @@
-# Blog
+# Mnt
 
 To start your Phoenix app:
 

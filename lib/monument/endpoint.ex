@@ -1,20 +1,19 @@
-defmodule Blog.Endpoint do
-  use Phoenix.Endpoint, otp_app: :blog
+defmodule Mnt.Endpoint do
+  use Phoenix.Endpoint, otp_app: :monument
 
-  socket "/socket", Blog.UserSocket
+  socket "/socket", Mnt.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :blog, gzip: true
+    at: "/", from: :monument, gzip: false,
+    only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
-    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
 
@@ -34,8 +33,8 @@ defmodule Blog.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_blog_key",
-    signing_salt: "sSsNw0I3"
+    key: "_monument_key",
+    signing_salt: "/cHxt5hb"
 
-  plug Blog.Router
+  plug Mnt.Router
 end

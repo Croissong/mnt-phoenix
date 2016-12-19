@@ -6,15 +6,16 @@
 use Mix.Config
 
 # General application configuration
-config :blog,
-  ecto_repos: [Blog.Repo]
+config :monument,
+  namespace: Mnt,
+  ecto_repos: [Mnt.Repo]
 
 # Configures the endpoint
-config :blog, Blog.Endpoint,
+config :monument, Mnt.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "ASlBH4wG4H1zRdYTdAIgZ14wO2JOURzZQjK9an+fqAowgbd1SkGwweakIHECaza7",
-  render_errors: [view: Blog.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Blog.PubSub,
+  secret_key_base: "S04h9aWBy3b7Ie30h+qUsCcqT6W1eIv9SCgqTNBH9YmrTwAwXlygmsTYqAV3gu99",
+  render_errors: [view: Mnt.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Mnt.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

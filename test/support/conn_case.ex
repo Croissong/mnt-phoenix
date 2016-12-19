@@ -1,4 +1,4 @@
-defmodule Blog.ConnCase do
+defmodule Mnt.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Blog.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Blog.Repo
+      alias Mnt.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Blog.Router.Helpers
+      import Mnt.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Blog.Endpoint
+      @endpoint Mnt.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Blog.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Mnt.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Blog.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Mnt.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

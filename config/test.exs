@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :blog, Blog.Endpoint,
+config :monument, Mnt.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :blog, Blog.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :blog, Blog.Repo,
+config :monument, Mnt.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "blog_test",
+  database: "monument_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
